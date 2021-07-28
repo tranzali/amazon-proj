@@ -1,16 +1,13 @@
+import { SearchIcon, ShoppingCartIcon, MenuIcon } from "@heroicons/react/outline"
 import Image from "next/image"
-import {
-    MenuIcon,
-    SearchIcon,
-    ShoppingCartIcon
-} from "@heroicons/react/outline"
 
-function Header() {
+function Header2() {
     return (
         <header className="sticky top-0 z-50">
-            <div className="flex items-center bg-amazon_blue p-1 flex-grow py-2">
+            {/* TOP */}
+            <div className="flex bg-amazon_blue items-center flex-grow p-1 py-2">
                 <div className="mt-2 flex items-center flex-grow sm:flex-grow-0">
-                    <Image  
+                    <Image 
                         src="https://links.papareact.com/f90"
                         width={150}
                         height={40}
@@ -18,33 +15,32 @@ function Header() {
                         className="cursor-pointer"
                     />
                 </div>
-
-                <div className="hidden sm:flex items-center h-10 rounded-md flex-grow cursor-pointer bg-yellow-400 hover:bg-yellow-500">
-                    <input className="h-full p-2 w-6 flex-grow rounded-l-md flex-shrink focus:outline-none px-4" type="text" />
-                    <SearchIcon className="h-12 p-4" 
                 
-                    />
+                <div className="bg-yellow-400 hover:bg-yellow-500 h-10 items-center hidden sm:flex rounded-md flex-grow cursor-pointer">
+                    <input type="text" className="rounded-l-md flex-grow h-full p-2 w-6 flex-shrink focus:outline-none px-4" />
+                    <SearchIcon className="h-12 p-4" />
                 </div>
-            
-                <div className="flex text-white items-center text-xs space-x-4 mx-6 whitespace-nowrap">
+
+                <div className="text-white flex items-center text-xs space-x-4 mx-4 whitespace-nowrap">
                     <div className="link">
-                        <p>Hello, user</p>
-                        <p className="font-extrabold md:text-sm">Account & Lists</p>
+                        <p>Hello, User</p>
+                        <p className="font-extrabold md:text-sm">Accounts & Lists</p>
                     </div>
                     <div className="link">
                         <p>Returns</p>
                         <p className="font-extrabold md:text-sm">& Orders</p>
                     </div>
                     <div className="relative flex items-center link">
-                        <span className="absolute top-0 right-0 md:right-10 h-4 w-4 text-center text-black font-bold bg-yellow-400 rounded-full">0</span>
+                        <span className="absolute top-0 right-0 md:right-10 h-4 w-4 bg-yellow-400 rounded-full text-black font-bold text-center">0</span>
                         <ShoppingCartIcon className="h-10" />
-                        <p className="hidden md:inline font-extrabold md:text-sm mt-2">Basket</p>
+                        <p className="mt-2 hidden md:inline font-extrabold md:text-sm">Basket</p>
                     </div>
                 </div>
             </div>
-            
+
+            {/* BOTTOM */}
             <div className="flex items-center space-x-3 p-2 pl-6 bg-amazon_blue-light text-white text-sm">
-                <p onClick={() => router.push('/orders')} className="link flex items-center">
+                <p onClick={() => router.push('/orders')}  className="link flex items-center">
                     <MenuIcon className="lg:hidden h-6 mr-1" />
                     All
                 </p>
@@ -57,11 +53,9 @@ function Header() {
                 <p className="link hidden lg:inline-flex">Buy Again</p>
                 <p className="link hidden lg:inline-flex">Shopper Toolkits</p>
                 <p className="link hidden lg:inline-flex">Health & Personal Care</p>
-                
             </div>
-            
         </header>
     )
 }
 
-export default Header
+export default Header2
