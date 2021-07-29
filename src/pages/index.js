@@ -1,10 +1,11 @@
 import Head from 'next/head'
+import Banner from '../components/Banner'
 import Header from '../components/Header'
 // import Header2 from '../components/Header2'
 
 export default function Home() {
   return (
-    <div>
+    <div className="bg-gray-100">
       <Head>
         <title>Amazon Build</title>
       </Head>
@@ -12,7 +13,11 @@ export default function Home() {
       <Header />
       {/* <Header2 /> */}
       
-      {/* Banner */}
+      <main className="max-w-screen-2xl mx-auto">
+        <Banner />
+      
+      {/* Product Feed */}
+      </main>
       
     </div>
   )
