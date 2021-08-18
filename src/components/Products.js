@@ -14,30 +14,33 @@ function Products({ id, title, price, description, category, image }) {
     const [hasPrime] = useState(Math.random() < 0.5)
 
     return (
-        <div key={id} className="flex flex-col text-center">
-            <p>{category}</p>
+        <div className="relative flex flex-col m-5 bg-white z-30 p-10">
+            <p className="absolute top-2 right-2 text-xs italic text-gray-400">{category}</p>
+            
             <Image src={image} width={200} height={200} objectFit="contain" />
-            <h4>{title}</h4>
+           
+            <h4 className="my-3 font-bold">{title}</h4>
 
             <div className="flex">
                 {Array(rating).fill().map((_, i) => (
-                    <StarIcon className="h-5 text-yellow-300" />
+                    <StarIcon className="h-5 text-yellow-500" />
                 ))}
             </div>
-            <p>{description}</p>
 
-            <div>
+            <p className="text-xs my-2 line-clamp-2 font-bold">{description}</p>
+
+            <div className="mb-5 font-bold">
                 <Currency quantity={price} currency="GBP" />
             </div>
 
             {hasPrime && (
-                <div>
-                    <img src="https://links.papareact.com/fdw" alt="" />
-                    <p className="font-bold">Free Next-Day Delivery</p>
+                <div className="flex items-center space-x-2 mt-5">
+                    <img className="w-12" src="https://links.papareact.com/fdw" alt="" />
+                    <p className="text-xs text-gray-500 font-bold">Free Next-Day Delivery</p>
                 </div>
             )}
 
-            <button className="bg-yellow-400 rounded-lg p-2">Add to Basket</button>
+            <button className="mt-auto button">Add to Basket</button>
         </div>
     )
 }

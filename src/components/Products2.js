@@ -14,7 +14,7 @@ function products2({ id, title, price, description, category, image }) {
     const [hasPrime] = useState(Math.random() < 0.5)
 
     return (
-        <div key={id}>
+        <div>
             <p>{category}</p>
             <Image src={image} width={200} height={200} objectFit="contain" />
             <h4>{title}</h4>
