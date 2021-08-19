@@ -1,3 +1,4 @@
+import { signIn, signOut, useSession } from 'next-auth/client'
 import Image from "next/image"
 import {
     MenuIcon,
@@ -6,6 +7,8 @@ import {
 } from "@heroicons/react/outline"
 
 function Header() {
+    const [ session, loading ] = useSession()
+
     return (
         <header className="sticky top-0 z-50">
             <div className="flex items-center bg-amazon_blue p-1 flex-grow py-2">
@@ -28,8 +31,19 @@ function Header() {
             
                 <div className="flex text-white items-center text-xs space-x-4 mx-6 whitespace-nowrap">
                     <div className="link">
+                     <>
+                        {!session && <>
+                        Not signed in <br/>
+                        <button onClick={() => signIn()}>Sign in</button>
+                        </>}
+                        {session && <>
+                        Signed in as {session.user.email} <br/>
+                        <button onClick={() => signOut()}>Sign out</button>
                         <p>Hello, user</p>
                         <p className="font-extrabold md:text-sm">Account & Lists</p>
+                        </>}
+                    </>
+                        
                     </div>
                     <div className="link">
                         <p>Returns</p>

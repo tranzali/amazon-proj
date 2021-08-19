@@ -6,6 +6,7 @@ import ProductFeed from '../components/ProductFeed'
 // import Header2 from '../components/Header2'
 
 export default function Home({ products }) {
+
   return (
     <div className="bg-gray-100">
       <Head>
@@ -37,19 +38,6 @@ export async function getServerSideProps(context) {
     },
   }
 }
-
-// get data from fakestoreapi
-// export async function getServerSideProps(context) {
-//   const products = await fetch('https://fakestoreapi.com/products').then(
-//     (res)=>res.json()
-//   )
-
-//   return { 
-//     props: {
-//       products,
-//     },
-//    }
-// }
 
 // pass products as props to Home function above, products now available to our components in the Home function
 
