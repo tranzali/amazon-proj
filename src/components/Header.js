@@ -30,8 +30,11 @@ function Header() {
                 </div>
             
                 <div className="flex text-white items-center text-xs space-x-4 mx-6 whitespace-nowrap">
-                    <div className="link">
-                     <>
+                    <div onClick={signIn} className="link">
+
+                    <p>Hello, user</p>
+                    <p className="font-extrabold md:text-sm">Account & Lists</p>
+                     {/* <>
                         {!session && <>
                         Not signed in <br/>
                         <button onClick={() => signIn()}>Sign in</button>
@@ -42,7 +45,7 @@ function Header() {
                         <p>Hello, user</p>
                         <p className="font-extrabold md:text-sm">Account & Lists</p>
                         </>}
-                    </>
+                    </> */}
                         
                     </div>
                     <div className="link">
